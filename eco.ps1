@@ -16,3 +16,9 @@ pnputil /disable-device ${GPU_ID}
 
 # Set Brightness to minimum
 WMIC /NAMESPACE:\\root\wmi PATH WmiMonitorBrightnessMethods WHERE "Active=TRUE" CALL WmiSetBrightness Brightness=${BrightnessPercent} Timeout=0
+
+# Kill not necessaries processes
+Invoke-Expression (Stop-Process -Name Rainmeter)
+Invoke-Expression (Stop-Process -Name Discord)
+Invoke-Expression (Stop-Process -Name EpicGamesLauncher)
+Invoke-Expression (Stop-Process -Name RiotClientServices)
