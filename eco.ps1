@@ -18,9 +18,9 @@ pnputil /disable-device ${GPU_ID}
 WMIC /NAMESPACE:\\root\wmi PATH WmiMonitorBrightnessMethods WHERE "Active=TRUE" CALL WmiSetBrightness Brightness=${BrightnessPercent} Timeout=0
 
 # Kill not necessaries processes
-Invoke-Expression (Stop-Process -Name Rainmeter)
-Invoke-Expression (Stop-Process -Name Discord)
-Invoke-Expression (Stop-Process -Name EpicGamesLauncher)
-Invoke-Expression (Stop-Process -Name RiotClientServices)
-Invoke-Expression (Stop-Process -Name WslService -Force)
-Invoke-Expression (Stop-Process -Name WSearch)
+Invoke-Expression (Stop-Service -Name Rainmeter) | Out-Null
+Invoke-Expression (Stop-Service -Name Discord) | Out-Null
+Invoke-Expression (Stop-Service -Name EpicGamesLauncher) | Out-Null
+Invoke-Expression (Stop-Service -Name RiotClientServices) | Out-Null
+Invoke-Expression (Stop-Service -Name WslService -Force) | Out-Null
+Invoke-Expression (Stop-Service -Name WSearch) | Out-Null
